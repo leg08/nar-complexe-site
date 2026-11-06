@@ -65,9 +65,9 @@ section{padding:clamp(4rem,8vw,7rem) 0;position:relative}
   .burger{display:grid}
   .header,.header.scrolled{background:#0b0b0d;backdrop-filter:none;box-shadow:0 1px 0 var(--line)}
   .header .wrap{height:68px}
-  .nav-socials{display:flex;gap:.7rem;justify-content:center;margin-top:1rem}
-  .nav-socials a{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.07);border:1px solid var(--line);padding:0}
-  .nav-socials svg{width:18px;height:18px;fill:currentColor}
+  .nav-socials{display:flex;gap:1.6rem;justify-content:center;margin-top:1.2rem}
+  .nav-socials a{padding:0;border:0;color:#fff;display:grid;place-items:center}
+  .nav-socials svg{width:22px;height:22px;fill:#fff}
   .brand img{height:50px}
   .subnav{top:68px}
 }
