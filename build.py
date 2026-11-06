@@ -60,6 +60,11 @@ def footer():
 </div></footer>
 <div class="float">
  <a class="wa" href="{WA}" target="_blank" rel="noopener" aria-label="WhatsApp">{SVG["wa"]}</a>
+ <div class="float-socials">
+  <a href="https://www.instagram.com/n.a.r_complexe/" target="_blank" rel="noopener" aria-label="Instagram">{SVG["ig"]}</a>
+  <a href="https://www.tiktok.com/@n.a.r_complexe" target="_blank" rel="noopener" aria-label="TikTok">{SVG["tt"]}</a>
+  <a href="https://www.snapchat.com/add/narcomplexe" target="_blank" rel="noopener" aria-label="Snapchat">{SVG["snap"]}</a>
+ </div>
  <a class="tel" href="tel:{TEL_RAW}" aria-label="Appeler">{SVG["tel"]}</a>
  <a class="wz" href="{WAZE}" target="_blank" rel="noopener" aria-label="Itinéraire Waze">{SVG["waze"]}</a>
 </div>'''
