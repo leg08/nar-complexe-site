@@ -10,11 +10,13 @@
     burger.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
       burger.setAttribute('aria-expanded', open);
+      burger.querySelector('path').setAttribute('d', open ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16');
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      nav.classList.remove('open'); document.body.style.overflow = '';
-    }));
+    const closeNav = () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); burger.querySelector('path').setAttribute('d', 'M4 7h16M4 12h16M4 17h16'); document.body.style.overflow = ''; };
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeNav(); });
   }
 
   // Apparition au défilement

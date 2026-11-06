@@ -83,7 +83,7 @@ def page(fname, title, desc, body, active=None):
 <link rel="icon" href="assets/img/logo-footer.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=2">
 <script type="application/ld+json">{JSONLD}</script>
 </head><body>
 {header(active or fname)}
@@ -92,7 +92,7 @@ def page(fname, title, desc, body, active=None):
 </main>
 {footer()}
 <div class="lightbox" role="dialog" aria-label="Photo agrandie"><button aria-label="Fermer">×</button><img alt=""></div>
-<script src="assets/app.js" defer></script>
+<script src="assets/app.js?v=2" defer></script>
 </body></html>'''
     with open(os.path.join(OUT,fname),"w",encoding="utf-8") as f: f.write(html)
 
