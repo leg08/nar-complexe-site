@@ -29,6 +29,7 @@ NAV = [("index.html","Accueil"),("activites.html","Activités"),("tarifs.html","
 
 def header(active):
     links = "".join('<a href="%s"%s>%s</a>' % (h, ' class="active"' if h==active else '', t) for h,t in NAV)
+    links += '<a href="https://waterkarting-franchise.com/" target="_blank" rel="noopener" class="nav-ext">Devenez franchisé</a>' 
     return f'''<header class="header"><div class="wrap">
   <a class="brand" href="index.html" aria-label="N.A.R. Complexe Sportif, accueil"><img src="assets/img/logo.png" alt="N.A.R. Complexe Sportif Marrakech" width="160" height="62"></a>
   <nav class="nav" aria-label="Menu principal">{links}<a class="btn btn-wa btn-sm nav-cta" href="{WA}" target="_blank" rel="noopener">{SVG["wa"]} WhatsApp</a></nav>
@@ -50,7 +51,7 @@ def footer():
    <li><a href="activites.html#karting">Karting</a></li><li><a href="activites.html#waterkarting">Water karting</a></li><li><a href="activites.html#paintball">Paintball &amp; tir</a></li><li><a href="activites.html#supercars">Supercars</a></li></ul></div>
   <div><h4>Le complexe</h4><ul>
    <li><a href="tarifs.html">Tarifs &amp; packs</a></li><li><a href="tarifs.html#excursions">Excursions</a></li><li><a href="galerie.html">Galerie</a></li>
-   <li><a href="entreprises.html">Offres entreprises</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact &amp; accès</a></li></ul></div>
+   <li><a href="entreprises.html">Offres entreprises</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact &amp; accès</a></li><li><a href="https://waterkarting-franchise.com/" target="_blank" rel="noopener">Devenez franchisé Water Karting ↗</a></li></ul></div>
   <div><h4>Coordonnées</h4><ul>
    <li><a href="tel:{TEL_RAW}">{TEL}</a></li><li>{ADDR}</li><li><strong>7j/7 · 9h00 – 22h00</strong></li>
    <li><a href="{WAZE}" target="_blank" rel="noopener">Itinéraire Waze</a> · <a href="{MAPS}" target="_blank" rel="noopener">Google Maps</a></li></ul></div>
@@ -121,7 +122,7 @@ ACTS = [
  dict(id="karting", t="Rallye-karting", img="v-kart.png", chip=None, price="200", unit="15 min",
       s="Un circuit de karting au cœur du désert. Chronos, dépassements et podium entre amis."),
  dict(id="waterkarting", t="Water karting", img="v-waterkart.png", chip="1er circuit au Maroc", price="800", unit="15 min",
-      s="Un kart qui flotte ! Le premier circuit de water karting d'Afrique, pour toute la famille."),
+      s="Un kart qui flotte ! Le premier circuit de water karting d'Afrique, pour toute la famille. Concept disponible en franchise."),
  dict(id="paintball", t="Paintball & stand de tir", img="v-paintball.png", chip=None, price="200", unit="100 balles",
       s="Terrain de paintball aménagé et stand de tir équipé. Affrontez vos amis ou travaillez votre précision."),
  dict(id="supercars", t="Supercars · Test drive", img="v-huracan.png", chip="Immersion pilotage", price="2000", unit="15 min",
@@ -282,7 +283,7 @@ for a in ACTS:
     acts_html += f'''<article class="act" id="{a["id"]}"><div class="act-media{' photo' if photo else ''} rv"><img src="assets/img/{img}" alt="{t}" loading="lazy"></div>
  <div class="rv"><span class="eyebrow">{a["t"]}</span><h3>{t}</h3><p>{p1}</p><p style="margin-top:.8rem">{p2}</p>
  <div class="meta">{"".join(f"<span>{m}</span>" for m in meta)}</div>
- <div class="hero-actions"><a class="btn btn-red btn-sm" href="tarifs.html">Voir les tarifs</a><a class="btn btn-wa btn-sm" href="{WA}?text=Bonjour, je souhaite des informations sur : {t}" target="_blank" rel="noopener">{SVG["wa"]} Réserver</a></div></div></article>'''
+ <div class="hero-actions"><a class="btn btn-red btn-sm" href="tarifs.html">Voir les tarifs</a><a class="btn btn-wa btn-sm" href="{WA}?text=Bonjour, je souhaite des informations sur : {t}" target="_blank" rel="noopener">{SVG["wa"]} Réserver</a>{'<a class="btn btn-ghost btn-sm" href="https://waterkarting-franchise.com/" target="_blank" rel="noopener">Devenez franchisé ↗</a>' if a["id"]=="waterkarting" else ''}</div></div></article>'''
 subnav = "".join(f'<a href="#{a["id"]}">{a["t"]}</a>' for a in ACTS)
 page("activites.html","Activités – Quad, Can-Am, buggy, moto-cross, karting, water karting, paintball, supercars | N.A.R. Complexe Marrakech",
      "Toutes les activités du complexe N.A.R. à Marrakech : quad, Raptor, Can-Am Maverick, buggy, moto-cross, karting, water karting, paintball, stand de tir et test drive supercars.",

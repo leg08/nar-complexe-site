@@ -405,3 +405,6 @@ section{padding:clamp(4rem,8vw,7rem) 0;position:relative}
   .legal{margin-top:1.8rem;flex-direction:column;gap:.4rem}
   .legal a{margin:0 1rem 0 0}
 }
+/* lien externe du menu (franchise) */
+.nav a.nav-ext{color:var(--sand)}
+.nav a.nav-ext::after{content:" ↗";font-size:.8em}
