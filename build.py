@@ -32,7 +32,8 @@ def header(active):
     links += '<a href="franchise.html"%s class="nav-ext">Devenez franchisé</a>' % (' aria-current="page"' if active=="franchise.html" else '') 
     return f'''<header class="header"><div class="wrap">
   <a class="brand" href="index.html" aria-label="N.A.R. Complexe Sportif, accueil"><img src="assets/img/logo.png" alt="N.A.R. Complexe Sportif Marrakech" width="160" height="62"></a>
-  <nav class="nav" aria-label="Menu principal">{links}<a class="btn btn-wa btn-sm nav-cta" href="{WA}" target="_blank" rel="noopener">{SVG["wa"]} WhatsApp</a></nav>
+  <nav class="nav" aria-label="Menu principal">{links}<a class="btn btn-wa btn-sm nav-cta" href="{WA}" target="_blank" rel="noopener">{SVG["wa"]} WhatsApp</a>
+   <div class="nav-socials"><a href="https://www.instagram.com/n.a.r_complexe/" target="_blank" rel="noopener" aria-label="Instagram">{SVG["ig"]}</a><a href="https://www.tiktok.com/@n.a.r_complexe" target="_blank" rel="noopener" aria-label="TikTok">{SVG["tt"]}</a><a href="https://www.snapchat.com/add/narcomplexe" target="_blank" rel="noopener" aria-label="Snapchat">{SVG["snap"]}</a></div></nav>
   <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
 </div></header>'''
 
@@ -60,11 +61,6 @@ def footer():
 </div></footer>
 <div class="float">
  <a class="wa" href="{WA}" target="_blank" rel="noopener" aria-label="WhatsApp">{SVG["wa"]}</a>
- <div class="float-socials">
-  <a href="https://www.instagram.com/n.a.r_complexe/" target="_blank" rel="noopener" aria-label="Instagram">{SVG["ig"]}</a>
-  <a href="https://www.tiktok.com/@n.a.r_complexe" target="_blank" rel="noopener" aria-label="TikTok">{SVG["tt"]}</a>
-  <a href="https://www.snapchat.com/add/narcomplexe" target="_blank" rel="noopener" aria-label="Snapchat">{SVG["snap"]}</a>
- </div>
  <a class="tel" href="tel:{TEL_RAW}" aria-label="Appeler">{SVG["tel"]}</a>
  <a class="wz" href="{WAZE}" target="_blank" rel="noopener" aria-label="Itinéraire Waze">{SVG["waze"]}</a>
 </div>'''
