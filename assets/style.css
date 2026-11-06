@@ -409,3 +409,6 @@ section{padding:clamp(4rem,8vw,7rem) 0;position:relative}
 /* lien externe du menu (franchise) */
 .nav a.nav-ext{color:var(--sand)}
 .nav a.nav-ext::after{content:" ↗";font-size:.8em}
+.form-msg{padding:.9rem 1rem;border-radius:12px;margin-bottom:1rem;font-weight:600}
+.form-msg.ok{background:rgba(46,227,106,.12);border:1px solid rgba(46,227,106,.4);color:#8ff0b0}
+.form-msg.err{background:rgba(226,38,31,.12);border:1px solid rgba(226,38,31,.4);color:#ff9b96}

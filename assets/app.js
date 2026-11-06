@@ -58,3 +58,6 @@
     vo.observe(v);
   }
 })();
+// Retour du formulaire franchise (après envoi côté serveur)
+(function(){const q=new URLSearchParams(location.search);const ok=document.querySelector('.form-msg.ok'),err=document.querySelector('.form-msg.err');
+ if(ok&&q.get('envoye')==='1'){ok.hidden=false;ok.scrollIntoView({block:'center'});} if(err&&q.get('erreur')){err.hidden=false;err.scrollIntoView({block:'center'});}})();

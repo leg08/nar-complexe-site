@@ -29,7 +29,7 @@ NAV = [("index.html","Accueil"),("activites.html","Activités"),("tarifs.html","
 
 def header(active):
     links = "".join('<a href="%s"%s>%s</a>' % (h, ' class="active"' if h==active else '', t) for h,t in NAV)
-    links += '<a href="https://waterkarting-franchise.com/" target="_blank" rel="noopener" class="nav-ext">Devenez franchisé</a>' 
+    links += '<a href="franchise.html"%s class="nav-ext">Devenez franchisé</a>' % (' aria-current="page"' if active=="franchise.html" else '') 
     return f'''<header class="header"><div class="wrap">
   <a class="brand" href="index.html" aria-label="N.A.R. Complexe Sportif, accueil"><img src="assets/img/logo.png" alt="N.A.R. Complexe Sportif Marrakech" width="160" height="62"></a>
   <nav class="nav" aria-label="Menu principal">{links}<a class="btn btn-wa btn-sm nav-cta" href="{WA}" target="_blank" rel="noopener">{SVG["wa"]} WhatsApp</a></nav>
@@ -51,7 +51,7 @@ def footer():
    <li><a href="activites.html#karting">Karting</a></li><li><a href="activites.html#waterkarting">Water karting</a></li><li><a href="activites.html#paintball">Paintball &amp; tir</a></li><li><a href="activites.html#supercars">Supercars</a></li></ul></div>
   <div><h4>Le complexe</h4><ul>
    <li><a href="tarifs.html">Tarifs &amp; packs</a></li><li><a href="tarifs.html#excursions">Excursions</a></li><li><a href="galerie.html">Galerie</a></li>
-   <li><a href="entreprises.html">Offres entreprises</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact &amp; accès</a></li><li><a href="https://waterkarting-franchise.com/" target="_blank" rel="noopener">Devenez franchisé Water Karting ↗</a></li></ul></div>
+   <li><a href="entreprises.html">Offres entreprises</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact &amp; accès</a></li><li><a href="franchise.html">Devenez franchisé Water Karting</a></li></ul></div>
   <div><h4>Coordonnées</h4><ul>
    <li><a href="tel:{TEL_RAW}">{TEL}</a></li><li>{ADDR}</li><li><strong>7j/7 · 9h00 – 22h00</strong></li>
    <li><a href="{WAZE}" target="_blank" rel="noopener">Itinéraire Waze</a> · <a href="{MAPS}" target="_blank" rel="noopener">Google Maps</a></li></ul></div>
@@ -283,7 +283,7 @@ for a in ACTS:
     acts_html += f'''<article class="act" id="{a["id"]}"><div class="act-media{' photo' if photo else ''} rv"><img src="assets/img/{img}" alt="{t}" loading="lazy"></div>
  <div class="rv"><span class="eyebrow">{a["t"]}</span><h3>{t}</h3><p>{p1}</p><p style="margin-top:.8rem">{p2}</p>
  <div class="meta">{"".join(f"<span>{m}</span>" for m in meta)}</div>
- <div class="hero-actions"><a class="btn btn-red btn-sm" href="tarifs.html">Voir les tarifs</a><a class="btn btn-wa btn-sm" href="{WA}?text=Bonjour, je souhaite des informations sur : {t}" target="_blank" rel="noopener">{SVG["wa"]} Réserver</a>{'<a class="btn btn-ghost btn-sm" href="https://waterkarting-franchise.com/" target="_blank" rel="noopener">Devenez franchisé ↗</a>' if a["id"]=="waterkarting" else ''}</div></div></article>'''
+ <div class="hero-actions"><a class="btn btn-red btn-sm" href="tarifs.html">Voir les tarifs</a><a class="btn btn-wa btn-sm" href="{WA}?text=Bonjour, je souhaite des informations sur : {t}" target="_blank" rel="noopener">{SVG["wa"]} Réserver</a>{'<a class="btn btn-ghost btn-sm" href="franchise.html">Devenez franchisé</a>' if a["id"]=="waterkarting" else ''}</div></div></article>'''
 subnav = "".join(f'<a href="#{a["id"]}">{a["t"]}</a>' for a in ACTS)
 page("activites.html","Activités – Quad, Can-Am, buggy, moto-cross, karting, water karting, paintball, supercars | N.A.R. Complexe Marrakech",
      "Toutes les activités du complexe N.A.R. à Marrakech : quad, Raptor, Can-Am Maverick, buggy, moto-cross, karting, water karting, paintball, stand de tir et test drive supercars.",
@@ -404,7 +404,33 @@ ml = page_head("Mentions légales","Mentions <span class='sand'>légales</span>"
 page("mentions-legales.html","Mentions légales – N.A.R. Complexe Sportif","Mentions légales et politique de confidentialité du site N.A.R. Complexe Sportif, Marrakech.", ml)
 print("pages générées :", [f for f in os.listdir(OUT) if f.endswith('.html')])
 
+# ----------------------------------------------------------- FRANCHISE
+fr = page_head("Franchise","Devenez <span class='sand'>franchisé</span> Water Karting","Le premier circuit de water karting d'Afrique est né chez N.A.R. Complexe. Importez le concept dans votre ville : nous vous accompagnons de l'étude du site à l'ouverture.","p-drone.jpg") + f'''
+<section><div class="wrap"><div class="split" style="align-items:start">
+ <div class="rv"><span class="eyebrow">Le concept</span><h2>Un kart qui flotte, <span class="accent">un succès qui se duplique</span></h2>
+  <p class="lead" style="margin:1rem 0">Le water karting combine la vitesse du karting et la fraîcheur d'un plan d'eau. Accessible à toute la famille, sans permis, il attire touristes et locaux toute l'année dans les climats chauds.</p>
+  <ul class="checks"><li>Karts WATERKART dernière génération, gilets et casques fournis</li><li>Circuit aquatique modulable, installation sur bassin existant ou créé</li><li>Formation des équipes, procédures de sécurité et d'exploitation</li><li>Identité de marque, supports marketing et visibilité réseaux</li><li>Accompagnement au lancement puis suivi régulier</li></ul>
+  <div class="info-cards" style="grid-template-columns:1fr 1fr"><div class="info"><div class="ic">{SVG["phone"]}</div><div><h3>Par téléphone</h3><a href="tel:{TEL_RAW}">{TEL}</a></div></div><div class="info"><div class="ic">{SVG["clock"]}</div><div><h3>Réponse</h3><p>Sous 48 h ouvrées</p></div></div></div></div>
+ <div class="rv" style="background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:2rem">
+  <h3 style="margin-bottom:.4rem">Demander le dossier franchise</h3><p class="form-note" style="margin-bottom:1.4rem">Vos coordonnées sont envoyées directement à l'équipe N.A.R. Complexe par e-mail.</p>
+  <div class="form-msg ok" hidden>✓ Merci, votre demande a bien été envoyée. Nous revenons vers vous rapidement.</div>
+  <div class="form-msg err" hidden>Le message n'a pas pu être envoyé. Vérifiez les champs obligatoires ou contactez-nous par téléphone.</div>
+  <form id="form-franchise" class="form" method="post" action="https://www.narcomplexesportif.com/wp-admin/admin-post.php">
+   <input type="hidden" name="action" value="nar_franchise"><input type="text" name="site_web" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+   <div class="field"><label for="f-nom">Nom et prénom *</label><input id="f-nom" name="nom" required></div>
+   <div class="field"><label for="f-societe">Société</label><input id="f-societe" name="societe"></div>
+   <div class="field"><label for="f-tel">Téléphone *</label><input id="f-tel" name="tel" type="tel" required></div>
+   <div class="field"><label for="f-email">E-mail *</label><input id="f-email" name="email" type="email" required></div>
+   <div class="field"><label for="f-lieu">Ville / pays du projet *</label><input id="f-lieu" name="lieu" required placeholder="Ex. : Agadir, Maroc"></div>
+   <div class="field"><label for="f-budget">Budget envisagé</label><select id="f-budget" name="budget"><option>Non défini</option><option>Moins de 500 000 DH</option><option>500 000 – 1 000 000 DH</option><option>1 000 000 – 2 000 000 DH</option><option>Plus de 2 000 000 DH</option></select></div>
+   <div class="field full"><label for="f-message">Votre projet</label><textarea id="f-message" name="message" placeholder="Terrain ou plan d'eau disponible, calendrier, expérience dans les loisirs…"></textarea></div>
+   <div class="full"><button class="btn btn-red" type="submit" style="width:100%;justify-content:center">Envoyer ma demande</button></div>
+  </form></div>
+</div></div></section>
+<section class="alt"><div class="wrap"><div class="strip rv">{"".join(f'<a href="assets/img/{f}" data-lightbox><img src="assets/img/{f}" alt="{a}" loading="lazy"></a>' for f,a in [GALLERY[2],GALLERY[13],GALLERY[0],GALLERY[8],GALLERY[7],GALLERY[5]])}</div></div></section>'''
+page("franchise.html","Devenez franchisé Water Karting – N.A.R. Complexe Marrakech","Ouvrez un circuit de water karting dans votre ville avec le concept N.A.R. Complexe, pionnier en Afrique. Demandez le dossier franchise.", fr)
+
 page("404.html","Page introuvable – N.A.R. Complexe","Cette page n'existe pas.", page_head("Erreur","Page <span class='accent'>introuvable</span>","Cette page n'existe pas ou a été déplacée. Retournez à l'accueil ou écrivez-nous sur WhatsApp.","p-desert-buggies.jpg") + cta_band("On vous remet sur la piste ?","Toutes les activités, tarifs et infos pratiques sont sur l'accueil."), active="index.html")
-pages=["","activites.html","tarifs.html","galerie.html","entreprises.html","a-propos.html","contact.html","mentions-legales.html"]
+pages=["","activites.html","tarifs.html","galerie.html","entreprises.html","franchise.html","a-propos.html","contact.html","mentions-legales.html"]
 open(os.path.join(OUT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"  <url><loc>https://www.narcomplexesportif.com/{u}</loc></url>\n" for u in pages)+"</urlset>\n")
 open(os.path.join(OUT,"robots.txt"),"w").write("User-agent: *\nAllow: /\nSitemap: https://www.narcomplexesportif.com/sitemap.xml\n")
