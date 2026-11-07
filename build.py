@@ -25,6 +25,9 @@ SVG = {
  "pool": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 16c2 1.5 4 1.5 6 0s4-1.5 6 0 4 1.5 6 0M3 20c2 1.5 4 1.5 6 0s4-1.5 6 0 4 1.5 6 0M8 12V5a2 2 0 0 1 4 0M14 12V5a2 2 0 0 1 4 0"/></svg>',
 }
 
+SUPERCARS = ["v-huracan.png","v-aventador.png","v-urus.png","v-ferrari.png"]
+ROT = {f: ' data-rotate="%s"' % ",".join(SUPERCARS[i:]+SUPERCARS[:i]) for i,f in enumerate(SUPERCARS)}
+
 NAV = [("index.html","Accueil"),("activites.html","Activités"),("tarifs.html","Tarifs"),("galerie.html","Galerie"),("entreprises.html","Entreprises"),("a-propos.html","À propos"),("contact.html","Contact")]
 
 def header(active):
@@ -169,13 +172,13 @@ GALLERY = [("p-canam-desert.jpg","Can-Am Maverick dans le désert de Marrakech")
 def act_card(a):
     chip = f'<span class="chip">{a["chip"]}</span>' if a.get("chip") else ""
     photo = " photo" if a.get("photo") else ""
-    return f'''<a class="card rv" href="activites.html#{a["id"]}">{chip}<div class="media{photo}"><img src="assets/img/{a["img"]}" alt="{a["t"]}" loading="lazy"></div>
+    return f'''<a class="card rv" href="activites.html#{a["id"]}">{chip}<div class="media{photo}"><img src="assets/img/{a["img"]}"{ROT.get(a["img"],"")} alt="{a["t"]}" loading="lazy"></div>
  <div class="body"><h3>{a["t"]}</h3><p>{a["s"]}</p><div class="price"><span><b>{a["price"]} DH</b> <small>{a["unit"]}</small></span><span class="more">Découvrir</span></div></div></a>'''
 
 def tarif_card(t):
     name,sub,img,rows,cls = t
     trs = "".join(f"<tr><td>{d}</td><td>{p}<small>DH</small></td></tr>" for d,p in rows)
-    return f'''<div class="tarif rv{(' '+cls) if cls else ''}"><div class="top"><img src="assets/img/{img}" alt=""><div><h3>{name}</h3><small>{sub}</small></div></div><table>{trs}</table></div>'''
+    return f'''<div class="tarif rv{(' '+cls) if cls else ''}"><div class="top"><img src="assets/img/{img}"{ROT.get(img,"")} alt=""><div><h3>{name}</h3><small>{sub}</small></div></div><table>{trs}</table></div>'''
 
 def pack_card(p):
     n,amt,hot,items = p
@@ -281,7 +284,7 @@ DETAILS = {
 acts_html = ""
 for a in ACTS:
     t,img,photo,p1,p2,meta = DETAILS[a["id"]]
-    acts_html += f'''<article class="act" id="{a["id"]}"><div class="act-media{' photo' if photo else ''} rv"><img src="assets/img/{img}" alt="{t}" loading="lazy"></div>
+    acts_html += f'''<article class="act" id="{a["id"]}"><div class="act-media{' photo' if photo else ''} rv"><img src="assets/img/{img}"{ROT.get(img,"")} alt="{t}" loading="lazy"></div>
  <div class="rv"><span class="eyebrow">{a["t"]}</span><h3>{t}</h3><p>{p1}</p><p style="margin-top:.8rem">{p2}</p>
  <div class="meta">{"".join(f"<span>{m}</span>" for m in meta)}</div>
  <div class="hero-actions"><a class="btn btn-red btn-sm" href="tarifs.html">Voir les tarifs</a><a class="btn btn-wa btn-sm" href="{WA}?text=Bonjour, je souhaite des informations sur : {t}" target="_blank" rel="noopener">{SVG["wa"]} Réserver</a>{'<a class="btn btn-ghost btn-sm" href="franchise.html">Devenez franchisé</a>' if a["id"]=="waterkarting" else ''}</div></div></article>'''

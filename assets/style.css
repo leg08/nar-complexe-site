@@ -304,6 +304,9 @@ section{padding:clamp(4rem,8vw,7rem) 0;position:relative}
 .float .wa{background:#25d366}.float .tel{background:var(--red)}.float .wz{background:#33ccff}
 .float svg{width:26px;height:26px;fill:currentColor}
 
+img[data-rotate]{transition:opacity .45s ease,transform .45s ease}
+img[data-rotate].swap{opacity:0;transform:translateX(28px)}
+
 /* Animations d'apparition */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}

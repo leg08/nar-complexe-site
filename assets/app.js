@@ -51,6 +51,17 @@
     window.open('https://wa.me/212602587922?text=' + msg, '_blank');
   });
 
+  // Supercars : la voiture change toutes les 5 s
+  document.querySelectorAll('img[data-rotate]').forEach(img => {
+    const list = img.dataset.rotate.split(','), base = img.getAttribute('src').replace(/[^/]+$/, '');
+    list.forEach(f => { const p = new Image(); p.src = base + f; });
+    let i = 0;
+    setInterval(() => {
+      img.classList.add('swap');
+      setTimeout(() => { i = (i + 1) % list.length; img.src = base + list[i]; img.classList.remove('swap'); }, 450);
+    }, 5000);
+  });
+
   // Vidéo du hero : lecture silencieuse quand visible
   const v = document.querySelector('.reel video');
   if (v) {
