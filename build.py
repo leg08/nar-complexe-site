@@ -7,7 +7,7 @@ TEL = "+212 6 02 58 79 22"; TEL_RAW = "+212602587922"; WA = "https://wa.me/21260
 WAZE = "https://www.waze.com/en/live-map/directions/ma/marrakech-safi/n.a.r-complexe-sportif-location-quad-cross-raptor-buggy-waterkarting-paintball-karting-marrakech?place=ChIJ9RRt12yLrw0RAxssu5ktRnk"
 MAPS = "https://maps.google.com/?cid=8738722265252502275"
 MAP_EMBED = "https://www.google.com/maps?q=N.A.R+Complexe+Sportif+Marrakech&output=embed"
-ADDR = "Route de Casablanca, Douar Berhmoun, 40000 Marrakech"
+ADDR = "Centre Commune Bourrous, 40000 Marrakech, Maroc"
 
 SVG = {
  "wa": '<svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.7a12 12 0 0 0 5.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4ZM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.1 12C2.1 6.5 6.5 2 12 2c2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.5 9.9-9.9 9.9Zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg>',
@@ -57,7 +57,7 @@ def footer():
    <li><a href="tel:{TEL_RAW}">{TEL}</a></li><li>{ADDR}</li><li><strong>7j/7 · 9h00 – 22h00</strong></li>
    <li><a href="{WAZE}" target="_blank" rel="noopener">Itinéraire Waze</a> · <a href="{MAPS}" target="_blank" rel="noopener">Google Maps</a></li></ul></div>
  </div>
- <div class="legal"><span>© 2026 N.A.R. Complexe Sportif – Marrakech</span><span><a href="mentions-legales.html">Mentions légales</a><a href="mentions-legales.html#donnees">Confidentialité</a></span></div>
+ <div class="legal"><span>© 2026 N.A.R. Complexe Sportif – Marrakech</span><span><a href="mentions-legales.html">Mentions légales</a><a href="politique-de-confidentialite.html">Confidentialité</a></span></div>
 </div></footer>
 <div class="float">
  <a class="wa" href="{WA}" target="_blank" rel="noopener" aria-label="WhatsApp">{SVG["wa"]}</a>
@@ -68,7 +68,7 @@ def footer():
 JSONLD = json.dumps({
  "@context":"https://schema.org","@type":"SportsActivityLocation","name":"N.A.R. Complexe Sportif",
  "url":"https://www.narcomplexesportif.com/","telephone":TEL_RAW,"image":"https://www.narcomplexesportif.com/assets/img/p-canam-desert.jpg",
- "address":{"@type":"PostalAddress","streetAddress":"Route de Casablanca, Douar Berhmoun","postalCode":"40000","addressLocality":"Marrakech","addressCountry":"MA"},
+ "address":{"@type":"PostalAddress","streetAddress":"Centre Commune Bourrous","postalCode":"40000","addressLocality":"Marrakech","addressCountry":"MA"},
  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"22:00"}],
  "priceRange":"100 DH - 4500 DH","sameAs":["https://www.instagram.com/n.a.r_complexe/","https://www.tiktok.com/@n.a.r_complexe","https://www.snapchat.com/add/narcomplexe"]
 }, ensure_ascii=False)
@@ -213,7 +213,7 @@ home = f'''
   <div class="reel"><video muted loop playsinline preload="metadata" poster="assets/reel-poster.jpg"><source src="assets/reel.mp4" type="video/mp4"></video><span class="tag">● Live du complexe</span></div>
  </div>
 </section>
-<div class="ticker" aria-hidden="true"><div class="track"><span>Ouvert 7j/7 de 9h à 22h</span><span>Sans réservation</span><span>Route de Casablanca · Marrakech</span><span>Can-Am Maverick R en exclusivité au Maroc</span><span>Ouvert 7j/7 de 9h à 22h</span><span>Sans réservation</span><span>Route de Casablanca · Marrakech</span><span>Can-Am Maverick R en exclusivité au Maroc</span></div></div>
+<div class="ticker" aria-hidden="true"><div class="track"><span>Ouvert 7j/7 de 9h à 22h</span><span>Sans réservation</span><span>Commune Bourrous · Marrakech</span><span>Can-Am Maverick R en exclusivité au Maroc</span><span>Ouvert 7j/7 de 9h à 22h</span><span>Sans réservation</span><span>Commune Bourrous · Marrakech</span><span>Can-Am Maverick R en exclusivité au Maroc</span></div></div>
 
 <section id="activites"><div class="wrap">
  <div class="sec-head rv"><div><span class="eyebrow">9 activités, un seul lieu</span><h2>Choisissez votre <span class="accent">dose d'adrénaline</span></h2></div><p>Du quad enfant sur circuit encadré à la Lamborghini dans le désert : il y a une machine pour chaque pilote.</p></div>
@@ -235,7 +235,7 @@ home = f'''
 
 <section><div class="wrap"><div class="split">
  <div class="rv"><span class="eyebrow">Le complexe</span><h2>Un terrain de jeu <span class="accent">unique en Afrique</span></h2>
-  <p class="lead" style="margin-top:1rem">Sur la route de Casablanca, aux portes du désert de Marrakech, N.A.R. Complexe réunit un circuit de karting, le premier circuit de water karting du continent, un terrain de paintball, un stand de tir et plus de 110 véhicules tout-terrain.</p>
+  <p class="lead" style="margin-top:1rem">Aux portes du désert de Marrakech, à Bourrous, N.A.R. Complexe réunit un circuit de karting, le premier circuit de water karting du continent, un terrain de paintball, un stand de tir et plus de 110 véhicules tout-terrain.</p>
   <ul class="checks"><li>Départ d'excursions vers la palmeraie, le désert et l'Atlas</li><li>Service photographe et vidéo drone pour repartir avec vos images</li><li>Offres entreprises : séminaires, team building, incentives</li></ul>
   <a class="btn btn-ghost" href="a-propos.html">Découvrir le complexe</a></div>
  <div class="pic wide rv"><img src="assets/img/p-drone.jpg" alt="Vue aérienne du complexe N.A.R." loading="lazy"><div class="caption"><b>Vue du ciel</b><span>Circuit karting et plan d'eau du water karting</span></div></div>
@@ -389,20 +389,33 @@ contact = page_head("Contact","Contact <span class='sand'>& accès</span>","Une 
  <div class="map rv" style="margin-top:1.4rem;aspect-ratio:16/8"><iframe src="{MAP_EMBED}" loading="lazy" title="Carte N.A.R. Complexe" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
  <div class="socials rv" style="margin-top:1.6rem"><a href="https://www.instagram.com/n.a.r_complexe/" target="_blank" rel="noopener" aria-label="Instagram">{SVG["ig"]}</a><a href="https://www.tiktok.com/@n.a.r_complexe" target="_blank" rel="noopener" aria-label="TikTok">{SVG["tt"]}</a><a href="https://www.snapchat.com/add/narcomplexe" target="_blank" rel="noopener" aria-label="Snapchat">{SVG["snap"]}</a></div>
 </div></section>'''
-page("contact.html","Contact & accès – N.A.R. Complexe Sportif Marrakech","Contactez N.A.R. Complexe à Marrakech : +212 6 02 58 79 22, WhatsApp, itinéraire Waze et Google Maps. Route de Casablanca, Douar Berhmoun. Ouvert 7j/7 de 9h à 22h.", contact)
+page("contact.html","Contact & accès – N.A.R. Complexe Sportif Marrakech","Contactez N.A.R. Complexe à Marrakech : +212 6 02 58 79 22, WhatsApp, itinéraire Waze et Google Maps. Centre Commune Bourrous. Ouvert 7j/7 de 9h à 22h.", contact)
 
 # ----------------------------------------------------------- MENTIONS
-ml = page_head("Mentions légales","Mentions <span class='sand'>légales</span>","Informations légales et politique de confidentialité du site narcomplexesportif.com.","p-terrasse.jpg") + f'''
+ml = page_head("Mentions légales","Mentions <span class='sand'>légales</span>","Informations légales du site narcomplexesportif.com.","p-terrasse.jpg") + f'''
 <section style="padding-top:1rem"><div class="wrap prose">
- <h2>1. Présentation du site</h2><p><strong>Propriétaire :</strong> N.A.R. Complexe – {ADDR}.<br><strong>Responsable de publication :</strong> N.A.R. Complexe – {TEL}.<br><strong>Hébergeur :</strong> Namecheap.</p>
- <h2>2. Accès au site</h2><p>Le présent site est accessible 24 heures sur 24 et 7 jours sur 7, à l'exception des cas de force majeure, difficultés informatiques, maintenance, difficultés liées à la structure des réseaux de communication ou difficultés d'ordre technique.</p>
- <h2>3. Conditions générales d'utilisation</h2><p>La navigation sur ce site est soumise à la réglementation en vigueur et aux présentes conditions d'accès et d'utilisation.</p>
- <h2 id="donnees">4. Collecte et protection des données</h2><p>Nous collectons vos données personnelles uniquement lorsque vous nous contactez (formulaire, WhatsApp, téléphone) afin de répondre à votre demande. Conformément à la loi n° 09-08 promulguée par le Dahir 1-09-15 du 18 février 2009, relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel, vous bénéficiez d'un droit d'accès, de rectification et d'opposition aux informations qui vous concernent. Pour l'exercer, contactez-nous au {TEL}.</p>
- <h2>5. Cookies</h2><p>Ce site n'utilise pas de cookies de suivi publicitaire. Les services tiers intégrés (carte Google Maps, polices Google Fonts) peuvent déposer leurs propres cookies selon leurs politiques respectives. Vous pouvez vous y opposer en désactivant cette fonction dans les préférences de votre navigateur.</p>
- <h2>6. Limitation de responsabilité</h2><p>N.A.R. Complexe ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser les éléments de ce site. Les tarifs affichés sont indicatifs et peuvent évoluer sans préavis.</p>
- <h2>7. Propriété intellectuelle</h2><p>L'ensemble des contenus (textes, photos, vidéos, logo) est la propriété de N.A.R. Complexe ou de ses partenaires. Toute reproduction est interdite sans autorisation préalable.</p>
+ <h2>1. Éditeur du site</h2><p><strong>Raison sociale :</strong> NAR COMPLEXE SPORTIF, société à responsabilité limitée à associé unique au capital de 10 000 MAD.<br><strong>Registre du commerce :</strong> Marrakech n° 134673 · <strong>ICE :</strong> 003260085000064.<br><strong>Siège social :</strong> Bureau n° 14, Plateau bureau C5, Imm. G, Arset Sinko 4, Bd Mouzdalifa, Marrakech.<br><strong>Site d'exploitation :</strong> {ADDR}.<br><strong>Gérant et responsable de la publication :</strong> Marouane Amine.<br><strong>Contact :</strong> <a href="tel:{TEL_RAW}">{TEL}</a> · <a href="{WA}" target="_blank" rel="noopener">WhatsApp</a>.</p>
+ <h2>2. Hébergement</h2><p>Le site est hébergé par Namecheap, Inc. – 4600 East Washington Street, Suite 305, Phoenix, AZ 85034, États-Unis.</p>
+ <h2>3. Accès au site</h2><p>Le présent site est accessible 24 heures sur 24 et 7 jours sur 7, à l'exception des cas de force majeure, difficultés informatiques, maintenance, difficultés liées à la structure des réseaux de communication ou difficultés d'ordre technique.</p>
+ <h2>4. Conditions d'utilisation</h2><p>La navigation sur ce site est soumise à la réglementation marocaine en vigueur et aux présentes conditions. Les activités proposées sont pratiquées sur place sous la responsabilité de NAR COMPLEXE SPORTIF, dans le respect des consignes de sécurité données par l'équipe et avec l'équipement fourni.</p>
+ <h2 id="donnees">5. Données personnelles et cookies</h2><p>Le traitement de vos données et l'usage des cookies sont décrits dans notre <a href="politique-de-confidentialite.html">politique de confidentialité</a>.</p>
+ <h2>6. Limitation de responsabilité</h2><p>NAR COMPLEXE SPORTIF ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser les éléments de ce site. Les tarifs affichés sont indicatifs, exprimés en dirhams, et peuvent évoluer sans préavis ; seuls les tarifs confirmés sur place ou par WhatsApp font foi.</p>
+ <h2>7. Propriété intellectuelle</h2><p>L'ensemble des contenus (textes, photos, vidéos, logo, marque N.A.R. Complexe) est la propriété de NAR COMPLEXE SPORTIF ou de ses partenaires. Toute reproduction, même partielle, est interdite sans autorisation écrite préalable.</p>
 </div></section>'''
-page("mentions-legales.html","Mentions légales – N.A.R. Complexe Sportif","Mentions légales et politique de confidentialité du site N.A.R. Complexe Sportif, Marrakech.", ml)
+page("mentions-legales.html","Mentions légales – N.A.R. Complexe Sportif","Mentions légales du site N.A.R. Complexe Sportif, Marrakech : éditeur, hébergeur, conditions d'utilisation.", ml)
+
+# ----------------------------------------------------------- CONFIDENTIALITÉ
+pc = page_head("Confidentialité","Politique de <span class='sand'>confidentialité</span>","Comment NAR COMPLEXE SPORTIF collecte, utilise et protège vos données personnelles.","p-terrasse.jpg") + f'''
+<section style="padding-top:1rem"><div class="wrap prose">
+ <h2>1. Responsable du traitement</h2><p>NAR COMPLEXE SPORTIF (SARL AU, RC Marrakech n° 134673, ICE 003260085000064), siège social Bureau n° 14, Plateau bureau C5, Imm. G, Arset Sinko 4, Bd Mouzdalifa, Marrakech. Contact : <a href="tel:{TEL_RAW}">{TEL}</a>.</p>
+ <h2>2. Données collectées</h2><p>Nous ne collectons que les données que vous nous transmettez volontairement :</p><ul><li><strong>Formulaire franchise :</strong> nom, société, téléphone, e-mail, ville du projet, budget indicatif et message.</li><li><strong>Formulaire entreprises :</strong> les informations saisies sont transmises par WhatsApp depuis votre propre téléphone ; nous ne les stockons pas sur ce site.</li><li><strong>Contact direct :</strong> votre numéro et les échanges par téléphone ou WhatsApp.</li></ul>
+ <h2>3. Finalités et durée de conservation</h2><p>Ces données servent uniquement à répondre à votre demande, préparer votre venue ou étudier votre projet de franchise. Elles ne sont ni vendues ni cédées. Les demandes sont conservées au maximum 24 mois après le dernier échange, puis supprimées.</p>
+ <h2>4. Mesure d'audience et publicité</h2><p>Le site utilise Google Analytics et le suivi de conversion Google Ads afin de mesurer la fréquentation et l'efficacité de nos campagnes. Ces services déposent des cookies et collectent des données de navigation (pages vues, appareil, localisation approximative) selon les <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">règles de confidentialité de Google</a>. Vous pouvez vous y opposer via les réglages de votre navigateur ou le <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">module de désactivation Google Analytics</a>. Les services intégrés (carte Google Maps, polices Google Fonts) peuvent également déposer leurs propres cookies.</p>
+ <h2>5. Vos droits</h2><p>Conformément à la loi n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression de vos données. Pour l'exercer, contactez-nous au <a href="tel:{TEL_RAW}">{TEL}</a> ou par <a href="{WA}" target="_blank" rel="noopener">WhatsApp</a>. Vous pouvez également saisir la Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP).</p>
+ <h2>6. Sécurité</h2><p>Le site est servi en HTTPS. Les données issues du formulaire franchise sont transmises par e-mail au responsable du traitement et ne sont pas conservées dans une base de données accessible en ligne.</p>
+ <h2>7. Mise à jour</h2><p>Cette politique peut être modifiée à tout moment ; la version en ligne fait foi. Dernière mise à jour : novembre 2026.</p>
+</div></section>'''
+page("politique-de-confidentialite.html","Politique de confidentialité – N.A.R. Complexe Sportif","Politique de confidentialité du site N.A.R. Complexe Sportif, Marrakech : données collectées, cookies, droits (loi 09-08).", pc)
 print("pages générées :", [f for f in os.listdir(OUT) if f.endswith('.html')])
 
 # ----------------------------------------------------------- FRANCHISE
@@ -432,6 +445,6 @@ fr = page_head("Franchise","Devenez <span class='sand'>franchisé</span> Water K
 page("franchise.html","Devenez franchisé Water Karting – N.A.R. Complexe Marrakech","Ouvrez un circuit de water karting dans votre ville avec le concept N.A.R. Complexe, pionnier en Afrique. Demandez le dossier franchise.", fr)
 
 page("404.html","Page introuvable – N.A.R. Complexe","Cette page n'existe pas.", page_head("Erreur","Page <span class='accent'>introuvable</span>","Cette page n'existe pas ou a été déplacée. Retournez à l'accueil ou écrivez-nous sur WhatsApp.","p-desert-buggies.jpg") + cta_band("On vous remet sur la piste ?","Toutes les activités, tarifs et infos pratiques sont sur l'accueil."), active="index.html")
-pages=["","activites.html","tarifs.html","galerie.html","entreprises.html","franchise.html","a-propos.html","contact.html","mentions-legales.html"]
+pages=["","activites.html","tarifs.html","galerie.html","entreprises.html","franchise.html","a-propos.html","contact.html","mentions-legales.html","politique-de-confidentialite.html"]
 open(os.path.join(OUT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"  <url><loc>https://www.narcomplexesportif.com/{u}</loc></url>\n" for u in pages)+"</urlset>\n")
 open(os.path.join(OUT,"robots.txt"),"w").write("User-agent: *\nAllow: /\nSitemap: https://www.narcomplexesportif.com/sitemap.xml\n")
